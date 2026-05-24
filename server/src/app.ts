@@ -3,7 +3,11 @@ import cors from "cors";
 
 const app = express();
 
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(
+  cors({
+    origin: "http://blurry-photo-sorter-app.s3-website-us-east-1.amazonaws.com"
+  })
+);
 app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
