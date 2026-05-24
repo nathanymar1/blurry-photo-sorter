@@ -1,6 +1,6 @@
 # Blurry Photo Sorter
 
-This **Blurry Photo Sorter** is a full-stack web application that sorts blurry photos from a set of uploaded photos. The classifier was built using PyTorch and trained on my own labeled images!
+This [**Blurry Photo Sorter**](http://blurry-photo-sorter-app.s3-website-us-east-1.amazonaws.com/) is a full-stack web application that sorts blurry photos from a set of uploaded photos. The classifier was built using PyTorch and trained on my own labeled images!
 
 ### 💡 Motivation
 
