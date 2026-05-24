@@ -27,7 +27,7 @@ export const ImageCard = ({
   const handleDelete = async () => {
     onDelete(filename);
     try {
-      await fetch(`http://localhost:3000/images/${filename}`, {
+      await fetch(`http://34.228.188.242:3000/images/${filename}`, {
         method: "DELETE"
       });
     } catch (err) {

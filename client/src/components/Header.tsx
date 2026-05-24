@@ -17,14 +17,17 @@ export const Header = ({ images, clearImages }: HeaderProps) => {
     try {
       const form = new FormData();
       images.forEach((file) => form.append("images", file));
-      await fetch("http://localhost:3000/images/upload", {
+      await fetch("http://34.228.188.242:3000/images/upload", {
         method: "POST",
         body: form
       });
 
-      const response = await fetch("http://localhost:3000/images/classify", {
-        method: "POST"
-      });
+      const response = await fetch(
+        "http://34.228.188.242:3000/images/classify",
+        {
+          method: "POST"
+        }
+      );
       const data = await response.json();
       console.log("data:", data);
       console.log("data.body:", data.body);
@@ -42,7 +45,9 @@ export const Header = ({ images, clearImages }: HeaderProps) => {
         className="header-title"
         onClick={async () => {
           try {
-            await fetch("http://localhost:3000/images/", { method: "DELETE" });
+            await fetch("http://34.228.188.242:3000/images/", {
+              method: "DELETE"
+            });
             clearImages();
             navigate("/");
           } catch (err) {
