@@ -20,7 +20,12 @@ export const classifyImage = async ({
     Key: normalizedKey
   });
   const image = await s3Client.send(command);
-  const url = await getSignedUrl(s3Client, command, { expiresIn: 3600 });
+
+  const urlCommand = new GetObjectCommand({
+    Bucket: bucketName,
+    Key: normalizedKey
+  });
+  const url = await getSignedUrl(s3Client, urlCommand, { expiresIn: 3600 });
 
   // temporarily hold image in a Buffer
   const byteArray = await image.Body?.transformToByteArray();
